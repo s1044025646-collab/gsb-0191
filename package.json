@@ -1,0 +1,20 @@
+{
+  "name": "delaunay-voronoi-backend",
+  "version": "1.0.0",
+  "description": "平面点集 Delaunay 三角剖分与矩形裁剪 Voronoi 后端（TypeScript + Node.js + SQLite）",
+  "type": "module",
+  "bin": {
+    "triang": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test \"dist/test/**/*.test.js\"",
+    "start": "npm run build && node dist/server.js",
+    "demo": "npm run build && node demo/run-demo.mjs",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
